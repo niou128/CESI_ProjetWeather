@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label Grid.Column="0"
                Grid.Row="0"
@@ -29,21 +29,19 @@
                  Text="{Binding CityName, UpdateSourceTrigger=PropertyChanged}" />
         <Button Grid.Column="1"
                 Grid.Row="1"
-                Content="Météo"
+                Content="Obtenir la Météo"
                 Command="{Binding GetWeatherCommand}" />
-        <TextBlock Grid.Column="1"
-                   Grid.Row="2"
-                   Text="{Binding WeatherDescription}" />
-        <TextBlock Grid.Column="1"
-                   Grid.Row="3"
-                   Text="{Binding WindSpeed}" />
-        <TextBlock Grid.Column="1"
-                   Grid.Row="4"
-                   Text="{Binding Humidity}" />
-        <Image Grid.Column="1"
-               Grid.Row="5"
-               Source="{Binding WeatherIcon}"
-               Stretch="UniformToFill"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Description :" FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding WeatherDescription}" />
+
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Vitesse du vent :" FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding WindSpeed}" />
+
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Humidité :" FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Humidity}" />
+
+        <Image Grid.Column="1" Grid.Row="5" Source="{Binding WeatherIcon}" Stretch="Uniform" Margin="5"/>
+
     </Grid>
 
 </Window>
