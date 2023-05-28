@@ -3,7 +3,6 @@ using CESI_ProjetWeather.Services;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CESI_ProjetWeather.ViewModels
@@ -103,13 +102,12 @@ namespace CESI_ProjetWeather.ViewModels
                         {
                             var weather = await _weatherService.GetWeatherAsync(CityName);
                             WeatherDescription = $"{weather.Temperature}°C, {weather.WeatherDescription}";
-                            WindSpeed = $"{weather.WindSpeed} km/h";  
-                            Humidity = $"{weather.Humidity}%";        
+                            WindSpeed = $"{weather.WindSpeed} km/h";
+                            Humidity = $"{weather.Humidity}%";
                             WeatherIcon = "https:" + weather.WeatherIcon;
                         }
                         catch (Exception ex)
                         {
-                            // Vous pouvez remplacer cela par un logger ou tout autre mécanisme de journalisation que vous préférez.
                             System.Diagnostics.Debug.WriteLine($"An exception occurred: {ex}");
                         }
                     },
@@ -117,26 +115,9 @@ namespace CESI_ProjetWeather.ViewModels
             }
         }
 
-        public ICommand TestCommand
-        {
-            get
-            {
-                return _testCommand ??= new RelayCommand(
-                    param =>
-                    {
-                        System.Diagnostics.Debug.WriteLine("TestCommand was executed!");
-                        return Task.CompletedTask;
-                    },
-                    param => true);
-            }
-        }
-
         private bool CanExecuteGetWeather()
         {
-            // Pour le débogage, affichez ce message dans la console.
-            // Si le message s'affiche lorsque vous cliquez sur le bouton, alors la liaison fonctionne correctement.
-            System.Diagnostics.Debug.WriteLine("CanExecuteGetWeather was called!");
-            return true;
+            return !string.IsNullOrEmpty(CityName);
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
