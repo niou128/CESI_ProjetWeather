@@ -17,6 +17,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Column="0"
                Grid.Row="0"
@@ -26,10 +29,21 @@
                  Text="{Binding CityName, UpdateSourceTrigger=PropertyChanged}" />
         <Button Grid.Column="1"
                 Grid.Row="1"
-                Content="Test"
+                Content="Météo"
                 Command="{Binding GetWeatherCommand}" />
         <TextBlock Grid.Column="1"
                    Grid.Row="2"
-                   Text="{Binding WeatherDescription}"/>
+                   Text="{Binding WeatherDescription}" />
+        <TextBlock Grid.Column="1"
+                   Grid.Row="3"
+                   Text="{Binding WindSpeed}" />
+        <TextBlock Grid.Column="1"
+                   Grid.Row="4"
+                   Text="{Binding Humidity}" />
+        <Image Grid.Column="1"
+               Grid.Row="5"
+               Source="{Binding WeatherIcon}"
+               Stretch="UniformToFill"/>
     </Grid>
+
 </Window>

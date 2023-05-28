@@ -14,6 +14,9 @@ namespace CESI_ProjetWeather.ViewModels
 
         private string _cityName;
         private string _weatherDescription;
+        private string _windSpeed;
+        private string _humidity;
+        private string _weatherIcon;
         private ICommand _getWeatherCommand;
         private ICommand _testCommand;
 
@@ -50,6 +53,45 @@ namespace CESI_ProjetWeather.ViewModels
             }
         }
 
+        public string WindSpeed
+        {
+            get => _windSpeed;
+            set
+            {
+                if (_windSpeed != value)
+                {
+                    _windSpeed = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string Humidity
+        {
+            get => _humidity;
+            set
+            {
+                if (_humidity != value)
+                {
+                    _humidity = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string WeatherIcon
+        {
+            get => _weatherIcon;
+            set
+            {
+                if (_weatherIcon != value)
+                {
+                    _weatherIcon = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public ICommand GetWeatherCommand
         {
             get
@@ -61,6 +103,9 @@ namespace CESI_ProjetWeather.ViewModels
                         {
                             var weather = await _weatherService.GetWeatherAsync(CityName);
                             WeatherDescription = $"{weather.Temperature}°C, {weather.WeatherDescription}";
+                            WindSpeed = $"{weather.WindSpeed} km/h";  
+                            Humidity = $"{weather.Humidity}%";        
+                            WeatherIcon = "https:" + weather.WeatherIcon;
                         }
                         catch (Exception ex)
                         {
