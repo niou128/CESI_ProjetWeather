@@ -8,6 +8,13 @@
         Title="Weather App"
         Height="350"
         Width="525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CESI_ProjetWeather.Resources;component/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -26,21 +33,23 @@
                Content="Ville :" />
         <TextBox Grid.Column="1"
                  Grid.Row="0"
+                 Style="{StaticResource TextBoxStyle}"
                  Text="{Binding CityName, UpdateSourceTrigger=PropertyChanged}" />
         <Button Grid.Column="1"
                 Grid.Row="1"
+                Style="{StaticResource ButtonStyle}"
                 Content="Obtenir la Météo"
                 Command="{Binding GetWeatherCommand}" />
-        <TextBlock Grid.Column="0" Grid.Row="2" Text="Description :" FontWeight="Bold" />
-        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding WeatherDescription}" />
+        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource TextBlockStyle}" Text="Description :" FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBlockStyle}" Text="{Binding WeatherDescription}" />
 
-        <TextBlock Grid.Column="0" Grid.Row="3" Text="Vitesse du vent :" FontWeight="Bold" />
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding WindSpeed}" />
+        <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource TextBlockStyle}" Text="Vitesse du vent :" FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Grid.Row="3" Style="{StaticResource TextBlockStyle}" Text="{Binding WindSpeed}" />
 
-        <TextBlock Grid.Column="0" Grid.Row="4" Text="Humidité :" FontWeight="Bold" />
-        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Humidity}" />
+        <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource TextBlockStyle}" Text="Humidité :" FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBlockStyle}" Text="{Binding Humidity}" />
 
-        <Image Grid.Column="1" Grid.Row="5" Source="{Binding WeatherIcon}" Stretch="Uniform" Margin="5"/>
+        <Image Grid.Column="1" Grid.Row="5" Style="{StaticResource ImageStyle}" Source="{Binding WeatherIcon}" />
 
     </Grid>
 

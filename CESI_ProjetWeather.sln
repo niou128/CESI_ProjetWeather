@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CESI_ProjetWeather", "CESI_ProjetWeather\CESI_ProjetWeather.csproj", "{DD9C3ED9-EE77-44A2-B9B4-9B1D23283369}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CESI_ProjetWeather", "CESI_ProjetWeather\CESI_ProjetWeather.csproj", "{DD9C3ED9-EE77-44A2-B9B4-9B1D23283369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CESI_ProjetWeather.Resources", "CESI_ProjetWeather.Resources\CESI_ProjetWeather.Resources.csproj", "{FA3E4CC7-A323-482C-9DCE-C71613593E97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DD9C3ED9-EE77-44A2-B9B4-9B1D23283369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD9C3ED9-EE77-44A2-B9B4-9B1D23283369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD9C3ED9-EE77-44A2-B9B4-9B1D23283369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3E4CC7-A323-482C-9DCE-C71613593E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3E4CC7-A323-482C-9DCE-C71613593E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3E4CC7-A323-482C-9DCE-C71613593E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3E4CC7-A323-482C-9DCE-C71613593E97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
